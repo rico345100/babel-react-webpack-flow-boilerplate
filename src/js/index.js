@@ -15,3 +15,7 @@ entryEl.className = 'entry';
 body.appendChild(entryEl);
 
 ReactDOM.render(<App message="Helloworld" />, entryEl);
+
+// Comment above line and uncomment below line will gives you in error in runtime also!
+// type Prop will transform to inner propTypes automatically!
+// ReactDOM.render(<App message={123} />, entryEl);
