@@ -6,18 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const plugins = [
-	new CleanWebpackPlugin(['dist']),
-	new HtmlWebpackPlugin({
-		template: './src/index.html'
-	}),
-	new MiniCssExtractPlugin({
-		filename: '[name].css',
-		chunkFilename: '[id].css'
-	}),
-	new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
-];
-
 if (process.env.BUILD_ANALYZE) {
 	plugins.push(
 		new (require('webpack-bundle-analyzer')).BundleAnalyzerPlugin()
@@ -106,10 +94,29 @@ module.exports = {
 						}
 					}
 				]
-			}
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+            loader: 'file-loader',
+            options: {
+                name: '[name].[ext]'
+            }
+        }]
+      }
 		]
 	},
-	plugins,
+	plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
+  ],
 	resolve: {
 		modules: [
 			path.resolve('./src'),

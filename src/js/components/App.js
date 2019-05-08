@@ -2,6 +2,7 @@
 import { hot } from 'react-hot-loader';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './App.css';
 
 interface AppProps {
     message: string;
@@ -13,7 +14,9 @@ class App extends Component<AppProps, {}> {
     }
     render() {
         return (
-            <div>Message: {this.props.message}</div>
+            <div>
+              <div className={styles.hello}>Helloworld</div>
+            </div>
         );
     }
 }
