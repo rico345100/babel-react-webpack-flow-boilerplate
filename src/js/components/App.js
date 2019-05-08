@@ -1,4 +1,5 @@
 /* @flow */
+import { hot } from 'react-hot-loader';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -17,4 +18,4 @@ class App extends Component<AppProps, {}> {
     }
 }
 
-export default App;
+export default hot(module)(App);

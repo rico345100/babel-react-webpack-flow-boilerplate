@@ -6,6 +6,7 @@ Boilerplate for Babel + React + Flow + Webpack Combo.
 - Webpack 4
 - React 16
 - Flow Integeration
+- PropTypes interface to React PropTypes (Have an issue with this, temporarily removed from this repo)
 
 ## Getting Started
 Install Dependency.

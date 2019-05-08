@@ -32,8 +32,8 @@ module.exports = {
 			'react-dom',
 			'react-redux',
 			'redux',
-			'prop-types',
-			'babel-polyfill'
+      'prop-types',
+      'core-js'
 		]
 	},
 	output: {

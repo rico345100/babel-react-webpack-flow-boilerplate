@@ -18,8 +18,8 @@ module.exports = {
             'react-dom', 
             'react-redux',
             'redux',
-            'prop-types', 
-            'babel-polyfill'
+            'prop-types',
+            'core-js'
         ]
     },
     output: {
@@ -111,6 +111,9 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
+        alias: {
+          'react-dom': '@hot-loader/react-dom'
+        },
         modules: [
             path.resolve('./src'),
             path.resolve('./src/js'),
